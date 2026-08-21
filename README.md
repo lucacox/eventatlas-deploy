@@ -1,5 +1,7 @@
 # eventatlas-deploy
 
+[![Deploy Assets CI](https://github.com/lucacox/eventatlas-deploy/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/lucacox/eventatlas-deploy/actions/workflows/ci.yml)
+
 Runtime and local development assets for EventAtlas.
 
 ## Local development stack
