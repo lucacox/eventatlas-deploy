@@ -31,6 +31,7 @@ The services are exposed as:
 | Web application | `http://127.0.0.1:5173` |
 | Backend API | `http://127.0.0.1:8080/api/v1/topology` |
 | API documentation | `http://127.0.0.1:8080/docs` |
+| OTLP/HTTP trace receiver | `http://127.0.0.1:4318/v1/traces` |
 | NATS | `nats://127.0.0.1:4222` |
 | NATS monitoring | `http://127.0.0.1:8222` |
 | PostgreSQL | `postgres://eventatlas:eventatlas@127.0.0.1:5432/eventatlas` |
@@ -38,6 +39,8 @@ The services are exposed as:
 Changes under `eventatlas` trigger an Air rebuild and restart. Changes under
 `eventatlas-web` are picked up by Vite and sent to the browser through HMR.
 The backend refreshes its NATS topology every five seconds in this environment.
+It also enables the optional OTLP/HTTP receiver on port `4318`; collectors and
+binary-Protobuf OTLP exporters can send trace batches to `/v1/traces`.
 Dependencies are cached in named Docker volumes so source bind mounts do not
 reuse host `node_modules` or Go build caches.
 

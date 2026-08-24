@@ -40,8 +40,11 @@ services:
       EVENTATLAS_DATABASE_URL: "postgres://eventatlas:eventatlas@postgres:5432/eventatlas?sslmode=disable"
       EVENTATLAS_ENVIRONMENT: "development"
       EVENTATLAS_REFRESH_INTERVAL: "5s"
+      EVENTATLAS_OTLP_HTTP_ADDRESS: ":4318"
+      EVENTATLAS_OTLP_SOURCE_ID: "observation:otel:local"
     ports:
       - "8080:8080"
+      - "4318:4318"
     depends_on:
       nats:
         condition: service_healthy
